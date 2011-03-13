@@ -8,6 +8,7 @@ class MyProject(info: ProjectInfo) extends DefaultWebProject(info) {
 
   // Alternatively, you could use scalatra-specs
   val scalatest = "org.scalatra" %% "scalatra-scalatest" % scalatraVersion % "test"
+  val scalacheck = "org.scala-tools.testing" %% "scalacheck" % "1.8"
 
   // Pick your favorite slf4j binding
   val slf4jBinding = "ch.qos.logback" % "logback-classic" % "0.9.25" % "runtime"
@@ -18,4 +19,6 @@ class MyProject(info: ProjectInfo) extends DefaultWebProject(info) {
   val sonatypeNexusSnapshots = "Sonatype Nexus Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
   // For Scalate
   val fuseSourceSnapshots = "FuseSource Snapshot Repository" at "http://repo.fusesource.com/nexus/content/repositories/snapshots"
+
+  val scalaCheckRepo = "Scalacheck Repository" at "http://scala-tools.org/repo-releases"
 }
