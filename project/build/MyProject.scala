@@ -8,6 +8,7 @@ class MyProject(info: ProjectInfo) extends DefaultWebProject(info) {
 
   // Alternatively, you could use scalatra-specs
   val scalatest = "org.scalatra" %% "scalatra-scalatest" % scalatraVersion % "test"
+  val scalatraSpecs = "org.scalatra" %% "scalatra-specs" % scalatraVersion % "test"
   val scalacheck = "org.scala-tools.testing" %% "scalacheck" % "1.8"
 
   // Pick your favorite slf4j binding

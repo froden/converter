@@ -7,8 +7,8 @@
 	<filter>
 		<filter-name>scalatra</filter-name>
 		<filter-class>
-			no.bekk.scalajvm.converter.ConverterFilter
-		</filter-class>
+            no.bekk.scalajvm.converter.ConverterRestApi
+        </filter-class>
 	</filter>
 	
 	<filter-mapping>
