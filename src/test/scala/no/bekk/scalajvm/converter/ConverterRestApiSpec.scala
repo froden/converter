@@ -9,36 +9,28 @@ class ConverterRestApiSpec extends ScalatraSpecification {
 
   "The Conversion rest api" should {
 
-    "when using GET / return a welcome message with a link to the celsius-to-fahrenheit conversing" in {
-      get(rootRoute) {
-        status mustEqual(200)
-        val xmlBody = XML.loadString(body)
-        (xmlBody \\ "a" \ "@href").text mustEqual(celsiusToFahrenheitRoute)
-      }
-    }
-
-    "when using GET " + celsiusToFahrenheitRoute + " return a sample conversion chart" in {
-      get(celsiusToFahrenheitRoute) {
-        val xmlBody = XML.loadString(body)
-        val tableHeaders = xmlBody \\ "th"
-        tableHeaders(0).text mustEqual("Celsius")
-        tableHeaders(1).text mustEqual("Fahrenheit")
-        val tableValues = xmlBody \\ "td"
-        tableValues.foreach(_.text mustMatch """[0-9]+(\.[0-9]+)?""")
-      }
-    }
-
+    //2.1
     "when using GET "+ celsiusToFahrenheitRoute +"/:number return the converted result" in {
       get(celsiusToFahrenheitRoute + "/50") {
-        body mustEqual "122.0"
+        //gjør ferdig testen og implementer routen i ConverterRestApi
+        //hint body
+        //hint mange mustXXX matchers
       }
     }
 
+    //2.2
     "when using GET "+ fahrenheitToCelsiusRoute +"/:number return the converted result" in {
-      get(fahrenheitToCelsiusRoute + "/-4") {
-        body mustEqual "-20.0"
-      }
+      //gjør ferdig testen og implementer routen i ConverterRestApi
     }
+
+    //2.3
+    //Lag en test som verifiserer at forsiden (GET /) inneholder en link til celsius-to-fahrenheit konverteringen
+    //Sjekk at http status 200 returneres
+    //hind Scala har innebyg støtte for å traversere XML
+    //hint body, status
+
+    //2.4
+    //Lag en test som sjekker at GET /celsius/fahrenheit (uten verdi) viser en side med eksempelkonverteringer
 
   }
 }

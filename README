@@ -20,3 +20,15 @@ OPPGAVER
 1.  Oppgaven går ut på å lage et trait med konverteringsmetoder mellom celsius og fahrenheit.
 1.1 Åpne testklassen ConverterFunSuite og bruk ScalaTest til å testdrive utviklingen av traitet.
 1.2 Åpne testklasse ConverterCheckSuite og bruk ScalaCheck til å teste Converter traitet
+
+2.  Oppgaven går ut på å lage et Rest API for konvertering mellom celsius og fahrenheit.
+    Rest apiet bruker Scalatra som webrammeverk
+    ConverterRestApi klassen er en delvis implementert Scalatra-service.
+    Oppgavene går ut på å bygge videre på skjellettet og gjøre ferdig funksjonaliteten
+    Testene bruker Specs testrammeverk
+2.1 Fyll ut matchingslogikken i den første testen og implmementer selve route-metoden i ConverterRestApi
+2.2 Fullfør den neste metoden tilsvarende med tilhørende route-metode i ConverterRestApi
+2.3 Lag en test som verifiserer at forsiden (GET /) inneholder en link til celsius-to-fahrenheit konverteringen
+    Implementer selve route-metoden
+2.4 Lag en test som sjekker at GET /celsius/fahrenheit (uten verdi) viser en side med eksempelkonverteringer
+    Implemeter selve route-metoden

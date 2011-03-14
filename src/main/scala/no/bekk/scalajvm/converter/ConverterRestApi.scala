@@ -20,19 +20,12 @@ class ConverterRestApi extends ScalatraFilter with Converter {
   }
 
   get(celsiusToFahrenheitRoute) {
-    val conversions = (-50 to (100, 10)).reverse.map(in => (in, celsiusToFahrenheit(in)))
-
     <html>
       <body>
         <h1>Celsius to Fahrenheit</h1>
         <table border="1">
           <tr><th>Celsius</th><th>Fahrenheit</th></tr>
-          {for (conversion <- conversions) yield
-            <tr>
-              <td><a href={celsiusToFahrenheitRoute + "/" + conversion._1}>{conversion._1}</a></td>
-              <td><a href={fahrenheitToCelsiusRoute + "/" + conversion._2}>{conversion._2}</a></td>
-            </tr>
-          }
+          <!-- Tabell med eksempelkonverteringer og link til selve konverteringen alene (og motsatt vei) -->
         </table>
         {footer}
       </body>
@@ -43,13 +36,15 @@ class ConverterRestApi extends ScalatraFilter with Converter {
     redirect(celsiusToFahrenheitRoute)
   }
 
-  get(celsiusToFahrenheitRoute + "/:input") {
-    celsiusToFahrenheit(params("input").toDouble)
-  }
+  // 2.1
+  //route for konvertering av enkeltverdi GET /celsius/fahrenheit/32
+  //skal kun returnere resultat i body
+  //hint gjenbruk routevariablene nedenfor
 
-  get(fahrenheitToCelsiusRoute + "/:input") {
-    fahrenheitToCelsius(params("input").toDouble)
-  }
+  // 2.2
+  //route for konvertering av enkeltverdi fra fahrenheit til celsius (GET /fahrenheit/celsius)
+  //skal kun returnere resultat i body
+  //hint gjenbruk routevariablene nedenfor
 
   val footer = {
     <p>
