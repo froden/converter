@@ -1,3 +1,11 @@
 # Testing med Scala
 
-Hands-on-oppgaver
+1. git clone git@github.com:froden/converter.git
+
+2. Last ned avhengigheter:
+$ sbt update
+
+3. Generer IDEA prosjekt:
+$ sbt idea
+
+4. Start IDEA og åpne prosjekt
