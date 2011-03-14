@@ -1,19 +1,19 @@
 package no.bekk.scalajvm.converter
 
-import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.FunSuite
+import org.scalatest.matchers.ShouldMatchers
 
+/**
+ * Bruker ScalaTests FunSuite som gir enkle xUnit aktige tester
+ * Man kaller metoden test i stedet for å definere testmetoder
+ * test("beskrivelse av test") {testfunksjon}
+ **/
+class ConverterFunSuite extends FunSuite with ShouldMatchers {
 
-class ConverterFunSuite extends FunSuite {
+  test("conversion of celsius to fahrenheit") {
 
-  object Conv extends Converter
-
-  test("Water freezes at 0 celsius and 32 fahrenheit") {
-    expect(32) {
-      Conv.celsiusToFahrenheit(0)
-    }
-    expect(0) {
-      Conv.fahrenheitToCelsius(32)
-    }
   }
+
+  //minimum tilsvarende for omvendt konvertering
+
 }

@@ -1,5 +1,8 @@
 Testing med Scala
 
+OPPSETT
+=======
+
 1. git clone git@github.com:froden/converter.git
 
 2. Last ned avhengigheter:
@@ -9,3 +12,10 @@ $ sbt update
 $ sbt idea
 
 4. Start IDEA og åpne prosjekt
+
+
+OPPGAVER
+========
+
+1.  Oppgaven går ut på å lage et trait med konverteringsmetoder mellom celsius og fahrenheit.
+1.1 Åpne testklassen ConverterFunSuite og bruk ScalaTest til å testdrive utviklingen av traitet.
