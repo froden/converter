@@ -19,3 +19,4 @@ OPPGAVER
 
 1.  Oppgaven går ut på å lage et trait med konverteringsmetoder mellom celsius og fahrenheit.
 1.1 Åpne testklassen ConverterFunSuite og bruk ScalaTest til å testdrive utviklingen av traitet.
+1.2 Åpne testklasse ConverterCheckSuite og bruk ScalaCheck til å teste Converter traitet
