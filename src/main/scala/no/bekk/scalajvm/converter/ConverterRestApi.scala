@@ -2,12 +2,6 @@ package no.bekk.scalajvm.converter
 
 import org.scalatra.ScalatraFilter
 
-object ConverterRestApi {
-  val rootRoute = "/"
-  val celsiusToFahrenheitRoute = "/celsius/fahrenheit"
-  val fahrenheitToCelsiusRoute = "/fahrenheit/celsius"
-}
-
 class ConverterRestApi extends ScalatraFilter with Converter {
   import ConverterRestApi._
 
@@ -65,4 +59,10 @@ class ConverterRestApi extends ScalatraFilter with Converter {
       </ul>
     </p>
   }
+}
+
+object ConverterRestApi {
+  val rootRoute = "/"
+  val celsiusToFahrenheitRoute = "/celsius/fahrenheit"
+  val fahrenheitToCelsiusRoute = "/fahrenheit/celsius"
 }
