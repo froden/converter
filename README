@@ -13,6 +13,10 @@ $ sbt idea
 
 4. Start IDEA og åpne prosjekt
 
+5. For å test webapp:
+$ jetty-run
+$ ~prepare-webapp
+
 
 OPPGAVER
 ========
