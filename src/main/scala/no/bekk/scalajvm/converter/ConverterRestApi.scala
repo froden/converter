@@ -1,9 +1,9 @@
 package no.bekk.scalajvm.converter
 
 import org.scalatra.ScalatraFilter
+import ConverterRestApi._
 
 class ConverterRestApi extends ScalatraFilter with Converter {
-  import ConverterRestApi._
 
   get(rootRoute) {
     <html>

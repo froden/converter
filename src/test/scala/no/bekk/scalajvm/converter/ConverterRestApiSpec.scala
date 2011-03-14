@@ -2,11 +2,10 @@ package no.bekk.scalajvm.converter
 
 import org.scalatra.test.specs.ScalatraSpecification
 import xml.{NodeSeq, XML}
+import ConverterRestApi._
 
 class ConverterRestApiSpec extends ScalatraSpecification {
   addFilter(classOf[ConverterRestApi], "/*")
-
-  import ConverterRestApi._
 
   "The Conversion rest api" should {
 
