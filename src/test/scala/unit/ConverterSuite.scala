@@ -5,8 +5,10 @@ import org.scalatest.Suite
 
 class ConverterSuite extends Suite {
 
+  object Conv extends Converter
+
   def test100CelsiusShouldEqual212Fahrenheit = {
-    assert(Converter.celsiusToFahrenheit(100) === 212.0)
+    assert(Conv.celsiusToFahrenheit(100) === 212.0)
   }
 
 }

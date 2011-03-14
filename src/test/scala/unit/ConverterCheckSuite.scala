@@ -1,12 +1,18 @@
 package no.bekk.scalajvm.converter
 
-import org.scalacheck.Prop._
-import org.scalatest.prop.Checkers
 import org.scalatest.FunSuite
-import org.scalacheck.Prop
+import org.scalatest.prop.Checkers
+import org.scalacheck.Arbitrary._
+import org.scalacheck.Prop._
+
 
 class ConverterCheckSuite extends FunSuite with Checkers {
+
+  object Conv extends Converter
+
   test("jejeje") {
-    check(Prop.forAll((degreesCelsius: Double) => Converter.fahrenheitToCelsius(Converter.celsiusToFahrenheit(degreesCelsius)) === degreesCelsius ))
+    check { degreesCelsius: Double =>
+      Conv.fahrenheitToCelsius(Conv.celsiusToFahrenheit(degreesCelsius)).round == degreesCelsius.round
+    }
   }
 }

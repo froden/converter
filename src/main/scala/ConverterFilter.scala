@@ -1,9 +1,8 @@
 package no.bekk.scalajvm.converter
 
-import org.scalatra.scalate.ScalateSupport
-import org.scalatra.{Initializable, ScalatraFilter}
+import org.scalatra.ScalatraFilter
 
-class ConverterFilter extends ScalatraFilter with ScalateSupport {
+class ConverterFilter extends ScalatraFilter with Converter {
 
   val rootRoute = "/"
   val celsiusToFahrenheitRoute = "/celsius/fahrenheit"
@@ -24,7 +23,7 @@ class ConverterFilter extends ScalatraFilter with ScalateSupport {
   }
 
   get(celsiusToFahrenheitRoute) {
-    val conversions = (-50 to (100, 10)).reverse.map(in => (in, Converter.celsiusToFahrenheit(in)))
+    val conversions = (-50 to (100, 10)).reverse.map(in => (in, celsiusToFahrenheit(in)))
 
     <html>
       <body>
@@ -48,11 +47,11 @@ class ConverterFilter extends ScalatraFilter with ScalateSupport {
   }
 
   get(celsiusToFahrenheitRoute + "/:input") {
-    Converter.celsiusToFahrenheit(params("input").toDouble)
+    celsiusToFahrenheit(params("input").toDouble)
   }
 
   get(fahrenheitToCelsiusRoute + "/:input") {
-    Converter.fahrenheitToCelsius(params("input").toDouble)
+    fahrenheitToCelsius(params("input").toDouble)
   }
 
   val footer = {
