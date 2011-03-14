@@ -10,7 +10,7 @@ class ConverterCheckSuite extends FunSuite with Checkers {
 
   object Conv extends Converter
 
-  test("jejeje") {
+  test("A Converter should yield the same result when converted back and forth") {
     check { degreesCelsius: Double =>
       Conv.fahrenheitToCelsius(Conv.celsiusToFahrenheit(degreesCelsius)).round == degreesCelsius.round
     }
